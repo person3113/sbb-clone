@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/user")
-@RequiredArgsConstructor
 public class UserController {
 
   private final UserService userService;
@@ -24,6 +24,7 @@ public class UserController {
 
   @PostMapping("/signup")
   public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult) {
+
     if (bindingResult.hasErrors()) {
       return "signup_form";
     }
@@ -46,5 +47,11 @@ public class UserController {
     }
 
     return "redirect:/";
+  }
+
+  @GetMapping("/login")
+  public String login() {
+
+    return "login_form";
   }
 }
