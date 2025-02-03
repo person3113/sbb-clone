@@ -41,6 +41,8 @@ dependencies {
 	// spring security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+	implementation group: 'org.commonmark', name: 'commonmark', version: '0.24.0'
 }
 
 tasks.named('test') {
